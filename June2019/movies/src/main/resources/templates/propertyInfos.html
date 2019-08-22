@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>PropertyInfo</title>
+    <link rel="stylesheet" type="text/css" media="all"
+          href="../css/movies.css" th:href="@{/css/movies.css}"/>
+</head>
+<body>
+<p th:if="${propertyInfo != null}" th:text="'PropertyInfo Added: ' + ${propertyInfo.address}"></p>
+<a th:href="@{/propertyInfo}">Add</a>
+<table>
+    <thead>
+    <tr>
+        <th>id</th>
+        <th>price</th>
+        <th>address</th>
+        <th>city</th>
+        <th>bedroom</th>
+        <th>availability</th>
+        <th>review</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="propertyInfo : ${propertyInfos}">
+        <td th:text="${propertyInfo.id}">id</td>
+        <td th:text="${propertyInfo.price}">price</td>
+        <td th:text="${propertyInfo.address}">address</td>
+        <td th:text="${propertyInfo.city}">city</td>
+        <td th:text="${propertyInfo.bedroom}">bedroom</td>
+        <td th:text="${propertyInfo.availability}">availability</td>
+        <td th:text="${propertyInfo.review}">review</td>
+        <td>
+            <a th:href="@{/propertyInfo(id=${propertyInfo.id})}">Edit</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
