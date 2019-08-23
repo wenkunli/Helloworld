@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add PropertyInfo</title>
+    <link rel="stylesheet" type="text/css" media="all"
+          href="../css/movies.css" th:href="@{/css/movies.css}"/>
+</head>
+<body>
+<div>
+    <div>
+        <h1>Add PropertyInfo</h1>
+        <form action="#" th:action="@{/propertyInfoadd}" th:object="${propertyInfo}" method="post">
+            <p id="id" th:if="${propertyInfo.id != null}"><input type="text" th:field="*{id}"/></p>
+            <p>Price: <input type="text" th:field="*{price}" /></p>
+            <p>Address: <input type="text" th:field="*{address}" /></p>
+            <p>City: <input type="text" th:field="*{city}" /></p>
+            <p>Bedroom: <input type="text" th:field="*{bedroom}" /></p>
+            <p>Availability: <input type="text" th:field="*{availability}" /></p>
+            <p>Review: <input type="text" th:field="*{review}" /></p>
+            <p><input type="submit" value="Submit" /></p>
+        </form>
+    </div>
+
+</div>
+</body>
+</html>

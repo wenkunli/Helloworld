@@ -20,7 +20,7 @@ public class PropertyInfoService {
         propertyInfoRepository.save(propertyInfo);
     }
 
-    public Optional<PropertyInfo> findsavePropertyInfoById(long id){
+    public Optional<PropertyInfo> findPropertyInfoById(long id){
         return  propertyInfoRepository.findById(id);
     }
 
@@ -33,5 +33,15 @@ public class PropertyInfoService {
         return propertyInfos;
     }
 
+    public List<PropertyInfo> getPropertyInfosbycity(String searchcity){
+        Iterable<PropertyInfo> found = propertyInfoRepository.findAll();
+        List<PropertyInfo> propertyInfos = new ArrayList<>();
+        for(PropertyInfo propertyInfo : found){
+            if(propertyInfo.getCity().equals(searchcity)){
+            propertyInfos.add(propertyInfo);
+            }
+        }
+        return propertyInfos;
+    }
 
 }

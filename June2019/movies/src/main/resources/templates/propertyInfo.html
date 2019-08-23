@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add PropertyInfo</title>
+    <link rel="stylesheet" type="text/css" media="all"
+          href="../css/movies.css" th:href="@{/css/movies.css}"/>
+</head>
+<body>
+<div>
+    <div>
+    <div>
+        <h1>Search</h1>
+        <form action="#" th:action="@{/propertyInfosearch}" th:object="${propertyInfo}" method="post">
+            <p id="id" th:if="${propertyInfo.id != null}"><input type="text" th:field="*{id}"/></p>
+            <p>Find places to stay and things to do <input type="text" th:field="*{city}" /></p>
+            <p><input type="submit" value="Explore" /></p>
+        </form>
+        <h1>Earn money from your extra space Host</h1>
+
+    </div>
+</div>
+</body>
+</html>
